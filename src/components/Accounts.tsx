@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Plus, Trash2, Wallet, PiggyBank, CreditCard, Banknote } from 'lucide-react';
+import { Plus, Trash2, Wallet } from 'lucide-react';
 import type { Account } from '../types';
 import { ACCOUNT_ICONS } from '../types';
 
@@ -18,13 +18,6 @@ const ACCOUNT_COLORS = [
   'bg-gradient-to-br from-rose-500 to-red-600',
   'bg-gradient-to-br from-cyan-500 to-blue-600',
 ];
-
-const ACCOUNT_TYPE_ICONS: Record<string, typeof Wallet> = {
-  checking: Wallet,
-  savings: PiggyBank,
-  credit: CreditCard,
-  cash: Banknote,
-};
 
 export default function Accounts({ accounts, accountBalances, onAddAccount, onDeleteAccount }: Props) {
   const [showAdd, setShowAdd] = useState(false);

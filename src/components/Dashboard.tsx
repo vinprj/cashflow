@@ -168,7 +168,7 @@ export default function Dashboard({ transactions, balance, totalIncome, totalExp
                   ))}
                 </Pie>
                 <Tooltip 
-                  formatter={(v) => fmt(v as number)}
+                  formatter={(v) => v ? fmt(Number(v)) : '₹0'}
                   contentStyle={{ 
                     borderRadius: '8px', 
                     border: 'none', 
