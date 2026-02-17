@@ -1,8 +1,8 @@
-import { Sun, Moon, LayoutDashboard, List, Plus, Wallet, Target, Building2, Download } from 'lucide-react';
+import { Sun, Moon, LayoutDashboard, List, Plus, Wallet, Target, Building2, Download, PiggyBank } from 'lucide-react';
 
 interface Props { 
   view: string; 
-  setView: (v: 'dashboard' | 'transactions' | 'budgets' | 'accounts' | 'export') => void; 
+  setView: (v: 'dashboard' | 'transactions' | 'budgets' | 'accounts' | 'export' | 'goals') => void; 
   dark: boolean; 
   setDark: (d: boolean) => void; 
   onAdd: () => void; 
@@ -13,6 +13,7 @@ export default function Header({ view, setView, dark, setDark, onAdd }: Props) {
     { key: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { key: 'transactions', icon: List, label: 'Transactions' },
     { key: 'budgets', icon: Target, label: 'Budgets' },
+    { key: 'goals', icon: PiggyBank, label: 'Goals' },
     { key: 'accounts', icon: Building2, label: 'Accounts' },
     { key: 'export', icon: Download, label: 'Export' },
   ] as const;

@@ -7,6 +7,7 @@ import Budgets from './components/Budgets';
 import Accounts from './components/Accounts';
 import Export from './components/Export';
 import Header from './components/Header';
+import SavingsGoals from './components/SavingsGoals';
 
 const SAMPLE_TRANSACTIONS: Transaction[] = [
   { id: '1', type: 'income', amount: 50000, category: 'Salary', description: 'Monthly salary', date: '2026-02-01', createdAt: Date.now() },
@@ -28,7 +29,7 @@ export default function App() {
   const [transactions, setTransactions] = useState<Transaction[]>(() => load('cf-transactions', SAMPLE_TRANSACTIONS));
   const [budgets, setBudgets] = useState<Budget[]>(() => load('cf-budgets', []));
   const [accounts, setAccounts] = useState<Account[]>(() => load('cf-accounts', SAMPLE_ACCOUNTS));
-  const [view, setView] = useState<'dashboard' | 'transactions' | 'budgets' | 'accounts' | 'export'>('dashboard');
+  const [view, setView] = useState<'dashboard' | 'transactions' | 'budgets' | 'accounts' | 'export' | 'goals'>('dashboard');
   const [showAdd, setShowAdd] = useState(false);
   const [dark, setDark] = useState(() => load('cf-dark', true));
 
@@ -110,6 +111,9 @@ export default function App() {
         )}
         {view === 'export' && (
           <Export data={exportData} onImport={handleImport} />
+        )}
+        {view === 'goals' && (
+          <SavingsGoals transactions={transactions} />
         )}
       </main>
       {showAdd && <AddTransaction onAdd={addTransaction} onClose={() => setShowAdd(false)} accounts={accounts} />}
