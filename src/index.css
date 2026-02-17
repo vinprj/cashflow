@@ -1,1 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+
+* {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+}
+
+:root {
+  --finance-primary: #1e40af;
+  --finance-success: #10b981;
+  --finance-danger: #ef4444;
+  --finance-warning: #f59e0b;
+  --finance-blue: #3b82f6;
+}
+
+/* Professional card */
+.fin-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.9) 100%);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.dark .fin-card {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9) 0%, rgba(31, 41, 55, 0.85) 100%);
+  border: 1px solid rgba(55, 65, 81, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fin-card:hover {
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Money gradient */
+.money-gradient {
+  background: linear-gradient(135deg, var(--finance-success) 0%, var(--finance-blue) 100%);
+}
+
+.expense-gradient {
+  background: linear-gradient(135deg, var(--finance-danger) 0%, var(--finance-warning) 100%);
+}
+
+/* Professional number animation */
+@keyframes slideInNumber {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.number-slide-in {
+  animation: slideInNumber 0.5s ease-out;
+}
+
+/* Chart container */
+.chart-container {
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.05), transparent);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+/* Data viz accents */
+.data-accent {
+  position: relative;
+}
+
+.data-accent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(to bottom, var(--finance-blue), var(--finance-success));
+  border-radius: 2px;
+}
+
+/* Stat card pulse */
+@keyframes statPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+}
+
+.stat-pulse {
+  animation: statPulse 2s ease-in-out infinite;
+}
+
+/* Professional button */
+.btn-pro {
+  background: linear-gradient(135deg, var(--finance-primary) 0%, var(--finance-blue) 100%);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-pro:hover {
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Badge styles */
+.badge-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+}
+
+.badge-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
+}
+
+/* Smooth transitions */
+.smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Grid line pattern */
+.grid-bg {
+  background-image: linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Pro tag */
+.pro-tag {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
